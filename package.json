@@ -1,0 +1,23 @@
+{
+  "name": "thinc-node-js",
+  "version": "1.0.0",
+  "description": "Nodejs Repo course for Thinc",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HzJavier/thinc-nodejs.git"
+  },
+  "author": "Javier",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HzJavier/thinc-nodejs/issues"
+  },
+  "homepage": "https://github.com/HzJavier/thinc-nodejs#readme",
+  "dependencies": {
+    "express": "^4.13.3"
+  }
+}
