@@ -10,6 +10,22 @@ var messages = [
   'Message 3'
 ];
 
+/**
+ * This is the middleware
+ */
+var userCount = 0;
+
+function userCounter(req, res, next) {
+  userCount ++;
+  console.log('Visitors: ' + userCount);
+  next();
+}
+
+app.use(userCounter);
+
+/**
+ * These are the routes
+ */
 app.get('/', function (req, res) {
   res.send('Facebook messenger killer');
 });
