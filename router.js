@@ -1,19 +1,23 @@
 var routeHandler = {};
 
-routeHandler['/users'] = function () {
-  return "These are users";
+routeHandler['/users'] = function (response) {
+  response.writeHead(200, {'Content-type': 'application/json'});
+  response.write("These are users");
+  response.end();
 };
 
-routeHandler['/messages'] = function () {
-  return "These are messages";
+routeHandler['/messages'] = function (response) {
+  response.writeHead(200, {'Content-type': 'application/json'});
+  response.write("These are messages");
+  response.end();
 };
 
-var router = function (path, callback) {
+var router = function (path, response) {
   if(routeHandler[path]) {
-    var message = routeHandler[path]();
-    callback(message); 
+    routeHandler[path](response);
   } else {
-    callback("");
+    response.writeHead(404, {'Content-type': 'application/json'});
+    response.end();
   }
 };
 

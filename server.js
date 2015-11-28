@@ -13,16 +13,7 @@ server.start = function (port) {
    http.createServer(function (request, response) {
     var pathname = url.parse(request.url).pathname;
 
-    router(pathname, function (message) {
-      if (message === "") {
-        response.writeHead(404, {'Content-type': 'application/json'});
-        response.end()
-      } else {
-        response.writeHead(200, {'Content-type': 'application/json'});
-        response.write(message);
-        response.end();
-      }
-    });
+    router(pathname, response);
   }).listen(PORT);
 
   console.log('Listening on ' + PORT); 
