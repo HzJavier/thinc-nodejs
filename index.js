@@ -1,6 +1,7 @@
 var express = require('express');
 var app = express();
 var messagesRoutes = require('./routes/messages');
+var usersRoutes = require('./routes/users');
 var PORT = 8080;
 
 /**
@@ -24,6 +25,7 @@ app.get('/', function (req, res) {
 });
 
 app.use('/messages', messagesRoutes);
+app.use('/users', usersRoutes);
 
 app.listen(PORT);
 console.log('Listening on ' + PORT);
