@@ -18,6 +18,11 @@ function userCounter(req, res, next) {
 app.use(userCounter);
 
 /**
+ * Middleware to serve static files
+ */
+app.use(express.static(__dirname + '/public'));
+
+/**
  * These are the routes
  */
 app.get('/', function (req, res) {

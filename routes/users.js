@@ -4,6 +4,7 @@ var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
 
 router.use(bodyParser.json());
+router.use(bodyParser.urlencoded());
 
 /*
  * Database Connection
@@ -63,7 +64,7 @@ router.get('/:id', function (req, res) {
 });
 
 router.post('/', function (req, res) {
-  var bodyData = req.body || {};
+  var bodyData = req.body;
   
   if(!bodyData.name || !bodyData.password) {
     res.send('Failure');

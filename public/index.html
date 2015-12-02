@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+
+  <script src="bower_components/jquery/dist/jquery.min.js"></script>
+</head>
+<body>
+  <h1>Welcome to Facebook Messenger Killer</h1>
+
+  <div class="user-list-wrapper">
+    <div class="span">These are the users</div>
+
+    <ul class="user-list">
+    
+    </ul>
+  </div>
+
+  <div class="form-wrapper">
+    Name: <input type="text" id="user-name">
+    Password: <input type="password" id="user-password">
+    <button id="create-user-btn">Create User</button>
+  </div>
+
+  <script>
+    $(document).ready(function () {
+      fetchUsers(); 
+
+      $('#create-user-btn').on('click', function () {
+        createUser();
+      });
+    });
+
+    function createUser() {
+      var data = {
+        name: $('#user-name').val(),
+        password: $('#user-password').val() 
+      };
+      
+      $.ajax({
+        method: 'POST',
+        url: '/users',
+        contentType: 'application/json',
+        data: JSON.stringify(data)
+      }).done(function () {
+        fetchUsers();
+      });
+    }
+
+    function fetchUsers () {
+      var listObj = $('.user-list');  
+      listObj.html("");
+
+      $.ajax({
+        method: 'GET',
+        url: '/users'
+      }).done(function (data) {
+
+        for (var i = 0, len = data.length; i<len; i++) {
+          var template = '<li>' + data[i].name + '</li>';
+          listObj.append(template);
+        }
+      });
+    }
+  </script>
+</body>
+</html>
