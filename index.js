@@ -29,8 +29,8 @@ app.get('/', function (req, res) {
   res.send('Facebook messenger killer');
 });
 
-app.use('/messages', messagesRoutes);
-app.use('/users', usersRoutes);
+app.use('/api/messages', messagesRoutes);
+app.use('/api/users', usersRoutes);
 
 app.listen(PORT);
 console.log('Listening on ' + PORT);

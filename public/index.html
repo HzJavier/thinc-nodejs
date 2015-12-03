@@ -6,21 +6,14 @@
 
   <script src="bower_components/jquery/dist/jquery.min.js"></script>
   <script src="bower_components/angular/angular.js"></script>
-  <script src="app/mainController.js"></script>
+  <script src="bower_components/angular-route/angular-route.js"></script>
+  <script src="/app/mainController.js"></script>
+  <script src="/app/users/controllers.js"></script>
 
 </head>
-<body ng-controller="messengerCtrl">
+<body>
   <h1>Welcome to Facebook Messenger Killer</h1>
 
-  Filtrar por nombre: <input type="text" ng-model="nameFilter">
-
-  <select id="" name="" ng-model="orderProperty">
-    <option value="name">Name</option>
-    <option value="id">Id</option>
-  </select>
-
-  <ul>
-    <li ng-repeat="user in users | filter:nameFilter | orderBy:orderProperty">Id: {{ user.id }} - {{ user.name }}</li>
-  </ul>
+  <ng-view></ng-view>
 </body>
 </html>
