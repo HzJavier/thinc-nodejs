@@ -8,10 +8,19 @@
     background-color: white;
     border: black solid 2px;
     height: $totalHeight - 100;
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+    span {
+      font-weight: bold;
+    }
   }
 
-  .input-wrapper {
+  .new-message-wrapper {
     float: right;
+   }
+
+  .input-wrapper {
 
     input[type="text"] {
       font-size: 22px;

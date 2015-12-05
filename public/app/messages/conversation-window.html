@@ -1,19 +1,23 @@
 <div class="chat-wrapper">
 
+  <div class="input-wrapper">
+     <input type="text" ng-model="username">
+  </div>
+
   <!-- Chat messages container -->
   <div class="chat-messages-wrapper">
     <ul class="message-list">
-      <li class="message">
-        <span>User x:</span>
-        Mensaje here! :D
+      <li class="message" ng-repeat="msg in messages">
+        <span>{{ msg.user }}:</span>
+        {{ msg.text }}
       </li>
     </ul>
   </div>
 
   <!-- Chage New message -->
   <div class="input-wrapper new-message-wrapper">
-    <input type="text">
-    <button>Send</button>
+    <input type="text" ng-model="newMessage">
+    <button ng-click="sendMessage(newMessage)">Send</button>
   </div>
 
 </div>
