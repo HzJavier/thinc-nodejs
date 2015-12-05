@@ -1,0 +1,26 @@
+.chat-wrapper {
+   $totalHeight: 600px;
+   $totalWidth: 100%;
+
+   height: $totalHeight;
+
+  .chat-messages-wrapper {
+    background-color: white;
+    border: black solid 2px;
+    height: $totalHeight - 100;
+  }
+
+  .input-wrapper {
+    float: right;
+
+    input[type="text"] {
+      font-size: 22px;
+    }
+
+    button {
+      font-size: 22px;
+      border: solid black 2px;
+      border-radius: 5px;
+    }
+  }
+}

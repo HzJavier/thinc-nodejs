@@ -1,9 +1,7 @@
+$orange: #FFA501;
+
 body {
-  background-color: black;
-
-  ul {
-    list-style-type: none;
-  }
-
-  color: red;
+  background-color: $orange;
 }
+
+@import 'chatWindow';

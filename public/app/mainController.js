@@ -1,11 +1,16 @@
 var messengerApp = angular.module('messengerApp', [
   'ngRoute',
-  'userControllers'  
+  'userControllers',
+  'chatControllers'
 ]); 
 
 messengerApp.config(['$routeProvider',
     function ($routeProvider) {
       $routeProvider.
+        when('/', {
+          templateUrl: 'app/messages/conversation-window.html',
+          controller: 'ChatCtrl'
+        }).
         when('/users', {
           templateUrl: 'app/users/list.html',
           controller: 'UsersCtrl'
