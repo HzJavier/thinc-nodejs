@@ -1,0 +1,21 @@
+body {
+  background-color: #FFA501; }
+
+.chat-wrapper {
+  height: 600px; }
+  .chat-wrapper .chat-messages-wrapper {
+    background-color: white;
+    border: black solid 2px;
+    height: 500px;
+    margin-top: 20px;
+    margin-bottom: 20px; }
+    .chat-wrapper .chat-messages-wrapper span {
+      font-weight: bold; }
+  .chat-wrapper .new-message-wrapper {
+    float: right; }
+  .chat-wrapper .input-wrapper input[type="text"] {
+    font-size: 22px; }
+  .chat-wrapper .input-wrapper button {
+    font-size: 22px;
+    border: solid black 2px;
+    border-radius: 5px; }

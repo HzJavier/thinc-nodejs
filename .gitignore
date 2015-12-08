@@ -1,5 +1,4 @@
 /node_modules
 /public/bower_components
-*.css
 *.scssc
 *.swp
