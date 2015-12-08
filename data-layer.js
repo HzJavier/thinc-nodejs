@@ -1,6 +1,6 @@
 var Firebase = require('firebase');
 var firebaseRef = new Firebase("https://thinc-chat.firebaseio.com/messages");
-var MSG_LIMIT = 500;
+var MSG_LIMIT = 5;
 var TIMEOUT_MS = 100;
 var dataLayer = {};
 

@@ -2,6 +2,8 @@ var express = require('express');
 var router = express.Router();
 var bodyParser = require('body-parser');
 var dataLayer = require('../data-layer');
+var Firebase = require('firebase');
+var firebaseRef = new Firebase("https://thinc-chat.firebaseio.com/messages");
 
 router.use(bodyParser.json());
 
