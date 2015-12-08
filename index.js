@@ -12,7 +12,7 @@ var http = require('http').Server(app);
 var socketIo = require('socket.io')(http);
 var messagesRoutes = require('./routes/messages');
 // var usersRoutes = require('./routes/users');
-var PORT = 8080;
+var PORT = process.env.PORT || 8080;
 
 /**
  * This is the middleware
