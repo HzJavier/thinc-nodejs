@@ -11,7 +11,7 @@ var http = require('http').Server(app);
  */
 var socketIo = require('socket.io')(http);
 var messagesRoutes = require('./routes/messages');
-var usersRoutes = require('./routes/users');
+// var usersRoutes = require('./routes/users');
 var PORT = 8080;
 
 /**
@@ -40,7 +40,7 @@ app.get('/', function (req, res) {
 });
 
 app.use('/api/messages', messagesRoutes);
-app.use('/api/users', usersRoutes);
+// app.use('/api/users', usersRoutes);
 
 socketIo.on('connection', function (socket) {
   console.log('Hey, somebody connnected to your chat');
